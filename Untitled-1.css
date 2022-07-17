@@ -1,0 +1,56 @@
+div#outer {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 4fr 2fr 1fr;
+}
+body {display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header header"
+                        "intro    faq"
+                        "articles faq"
+                        "footer  footer";
+    grid-column-gap: 15px;
+    background-color: #6495ED;
+}
+nav li {
+    font-family: fantasy;
+    font-size: 1.4em;
+    display: inline;
+    position: inline;
+    background-color: #E6E6FA;
+    top: 0;
+    left: 0;
+    right: 0;
+    width:100%;
+    align-items: center;
+}
+ul {list-style-type: none;
+margin: 0;
+padding: 0;
+}
+body > header {
+    grid-row: 1;
+    grid-column: 1/-1;
+}
+body > article {grid-area: intro; 
+}
+body > aside {grid-area: faq;
+}
+body > section {grid-area: articles;
+}
+body > footer {grid-area: footer;
+}
+section {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+section > h1 {
+    grid-area: 1/1/2/3;
+}
+body > * {
+     outline: 2px dashed red;
+}
+section > * {
+    outline:  2px dashed blue;
+}
+img { border: 0; }
